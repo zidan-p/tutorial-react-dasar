@@ -1,0 +1,46 @@
+ini adalah berkas yang akan menjelaskan megenai penggunaan routes di react.
+untuk penggunaaya tersendiri terdapat pada tugas sekolah saya, tidak saya buat sebagai components karena 
+routes sendiri terdiri dari beberapa components dan tampilanya seluruh halamanya berubah bersamaan dengan url.
+oleh karena itu saya memasukan pengaplikasiaanya besamaan dengan tugas sekolah, sementara file ini adalah penjelasanya.
+
+-- membuat SPA --
+SPA (Single Page Aplication) memungkinkan kita membuat sebuah halaman yang tempilanya berubah berdasarkan url tetapi
+tidak membuat halaman mereload ulang. tampilan disini bisa selurh maupun sebagian.
+
+1. intall react-router
+   untuk penginstalanya yaitu "npm i react-router-dom"
+
+2. import module react router
+   kita perlu mengimport {BrowserRouter, Route, Routes, Link}
+   "import {BrowserRouter, Route, Routes, Link} from 'react-router-dom'"
+
+3.  membut navigasi untuk perpindahan halaman dan format penggunaan
+
+    <BrowserRouter>
+    <div>
+      <nav>
+        <ul>
+            <Link to="/" className="ling">Home</Link>
+            <Link to="/spp" className="ling">Spp</Link>
+            <Link to="/kelas" className="ling">Kelas</Link>
+            <Link to="/siswa" className="ling">Siswa</Link>
+            <Link to="/petugas" className="ling">Petugas</Link>
+      </nav>
+      <main>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/spp" element={<Spp />} />
+          <Route path="/kelas" element={<Kelas />} />
+          <Route path="/siswa" element={<Siswa />} />
+          <Route path="/petugas" element={<Petugas />} />
+        </Routes>
+      </main>
+    </div>
+    </BrowserRouter>
+
+    a. fungsi Link digunakan untuk menganti url, mungkin mirip dengan a href tapi ada beberapa kelebihdan untuk melakukan routing
+    b. Routes berfungsi sebagai tempat menampung element yang dipanggi dari router
+    c. route sebagai pemanggil element berdasarkan path/url halaman
+    d. saya kurang tahu fungsi dari BrowserRouter, tapi mungkin berfungsi untuk membungkus nav dengan element yang terpanggil
+        - usahakan letakan BrowserRouter sebagai pembungkus sebelum direndder.
+
